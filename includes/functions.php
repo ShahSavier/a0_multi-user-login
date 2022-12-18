@@ -22,14 +22,13 @@ class Email
       $stmt->execute();
       $stmt->bind_result($username, $password);
       $stmt->store_result();
-      if ($stmt->fetch()) { //fetching the contents of the row 
+      if ($stmt->fetch()) { //fetching the contents of the row
         $_SESSION['email'] = $username; // Initializing Session
         $_SESSION['matrix_number'] = $matrixnumber;
         $_SESSION['id'] = $userid;
       }
       mysqli_close($conn); // Closing Connection
     }
-
   }
 
   public function EmailAdmin()
@@ -53,13 +52,12 @@ class Email
       $stmt->execute();
       $stmt->bind_result($username, $password);
       $stmt->store_result();
-      if ($stmt->fetch()) { //fetching the contents of the row 
+      if ($stmt->fetch()) { //fetching the contents of the row
         $_SESSION['admin_email'] = $username; // Initializing Session
         $_SESSION['admin_id'] = $adminid;
       }
       mysqli_close($conn); // Closing Connection
     }
-
   }
 
   public function EmailLect()
@@ -83,14 +81,13 @@ class Email
       $stmt->execute();
       $stmt->bind_result($username, $password);
       $stmt->store_result();
-      if ($stmt->fetch()) { //fetching the contents of the row 
+      if ($stmt->fetch()) { //fetching the contents of the row
         $_SESSION['lect_email'] = $username; // Initializing Session
         $_SESSION['lect_num'] = $lectnum;
         $_SESSION['lect_id'] = $lectid;
       }
       mysqli_close($conn); // Closing Connection
     }
-
   }
   public function SessionVerify()
   {
@@ -153,6 +150,7 @@ class Email
     $row = mysqli_fetch_assoc($ses_sql);
     $_SESSION["admin_id"] = $row["admin_id"];
     $_SESSION["admin_name"] = $row["admin_name"];
+    $_SESSION["role"] = $row["role"];
   }
   public function UserType()
   {
