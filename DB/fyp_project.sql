@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2022 at 05:13 PM
+-- Generation Time: Dec 18, 2022 at 01:44 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `fyp_project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(250) NOT NULL,
+  `admin_email` varchar(250) NOT NULL,
+  `admin_password` varchar(250) NOT NULL,
+  `role` int(11) NOT NULL DEFAULT '2'
+) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `role`) VALUES
+(1, 'admin', 'admin@a.com', '202cb962ac59075b964b07152d234b70', 2);
 
 -- --------------------------------------------------------
 
@@ -79,34 +100,7 @@ CREATE TABLE `examiner` (
 
 INSERT INTO `examiner` (`examiner_id`, `user_id`, `lect_info_id`) VALUES
 (1, 3, 1),
-(2, 3, 1),
-(3, 5, 2),
-(4, 5, 2),
-(5, 6, 1),
-(6, 6, 1),
-(7, 5, 1),
-(8, 5, 1),
-(9, 6, 2),
-(10, 6, 2),
-(11, 5, 3),
-(12, 5, 3),
-(13, 5, 3),
-(14, 5, 3),
-(15, 5, 3),
-(16, 5, 1),
-(17, 5, 1),
-(18, 5, 1),
-(19, 5, 1),
-(20, 5, 1),
-(21, 5, 4),
-(22, 5, 3),
-(23, 5, 2),
-(24, 5, 4),
-(25, 5, 4),
-(26, 5, 4),
-(27, 3, 1),
-(28, 3, 1),
-(29, 5, 1);
+(3, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +225,7 @@ CREATE TABLE `project_info` (
   `project_title` varchar(255) NOT NULL,
   `project_type` varchar(255) NOT NULL,
   `project_approval` varchar(255) NOT NULL,
-  `project_message` text NOT NULL
+  `project_message` text
 ) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
 
 --
@@ -240,7 +234,7 @@ CREATE TABLE `project_info` (
 
 INSERT INTO `project_info` (`info_id`, `user_id`, `lect_info_id`, `project_title`, `project_type`, `project_approval`, `project_message`) VALUES
 (5, 3, 7, 'dadasdrs', 'Web Application', 'Approve', 'aadfsdfsfdzgg'),
-(6, 6, 10, 'project_approval', 'Mobile Application', 'approve', ''),
+(6, 6, 10, 'project_approval', 'Mobile Application', 'Decline', ''),
 (7, 5, 1, 'tgf', 'Select here', 'Approve', '');
 
 -- --------------------------------------------------------
@@ -263,15 +257,21 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `matrix_number`, `email`, `password`, `role`) VALUES
-(1, 'admin', '123456', 'admin@a.com', '202cb962ac59075b964b07152d234b70', 2),
 (2, 'Aimuni Nadhrah Binti Yazit', '52213220153', 'lecturer@l.com', '202cb962ac59075b964b07152d234b70', 1),
 (3, 'MUHAMAD ALIF SHAHKIMI BIN MD ROZI', '3123456', 'student@s.com', '202cb962ac59075b964b07152d234b70', 0),
 (5, 'alif 2', '5123456', 's2@s.com', '202cb962ac59075b964b07152d234b70', 0),
-(6, 'alif 4', '6123456', 's4@s.com', '202cb962ac59075b964b07152d234b70', 0);
+(6, 'alif 4', '6123456', 's4@s.com', '202cb962ac59075b964b07152d234b70', 0),
+(7, 'uat', '123', 'uat@s.com', '202cb962ac59075b964b07152d234b70', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `complaint`
@@ -283,7 +283,8 @@ ALTER TABLE `complaint`
 -- Indexes for table `examiner`
 --
 ALTER TABLE `examiner`
-  ADD PRIMARY KEY (`examiner_id`);
+  ADD PRIMARY KEY (`examiner_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `lect_info`
@@ -314,6 +315,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
@@ -323,7 +330,7 @@ ALTER TABLE `complaint`
 -- AUTO_INCREMENT for table `examiner`
 --
 ALTER TABLE `examiner`
-  MODIFY `examiner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `examiner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lect_info`
@@ -347,7 +354,7 @@ ALTER TABLE `project_info`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
