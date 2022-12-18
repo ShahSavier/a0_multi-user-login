@@ -7,7 +7,9 @@
   </head>
   <body>
     <h1>This is Admin page</h1>
-    <h2>Hello: <?php $ufunc->UserName(); //Show name who is in session user?></h2>
+    <h2>Hello: <?php //$ufunc->UserName(); //Show name who is in session user?></h2>
+    <img src="assets/images/form-wizard-1.jpg" class="height:800px;" alt="">
+    <a href="../admin/examiner-form.php">Examiner Allocation</a>
     <a href="../../includes/logout.php">Logout</a>
   </body>
 </html>

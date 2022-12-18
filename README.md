@@ -12,9 +12,10 @@ includes/connect.php
 ### Example MySQL (DB) file
 
 ```
-DB/phpmultiuserlogin.sql
+DB/fyp_project.sql
 ```
 ```
-Admin: admin@admin.com | 123
-User: user@user.com | 123
+Admin :     admin@a.com        | Password : 123
+Lecturer :  zkas@uitm.edu.my   | Password : 123
+Student :   student@s.com      | Password : 123
 ```

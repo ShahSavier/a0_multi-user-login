@@ -3,8 +3,8 @@
   --input-padding-y: .75rem;
 }
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #ffffff;
+  background: linear-gradient(to right, #e7e7e7, #eeeeee);
   height: 100vh;
 }
 .rwcenter{
