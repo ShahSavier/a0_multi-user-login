@@ -81,13 +81,14 @@ class Email
       $stmt->execute();
       $stmt->bind_result($username, $password);
       $stmt->store_result();
-      if ($stmt->fetch()) { //fetching the contents of the row
+      if ($stmt->fetch()) { //fetching the contents of the row 
         $_SESSION['lect_email'] = $username; // Initializing Session
         $_SESSION['lect_num'] = $lectnum;
         $_SESSION['lect_id'] = $lectid;
       }
       mysqli_close($conn); // Closing Connection
     }
+
   }
   public function SessionVerify()
   {
