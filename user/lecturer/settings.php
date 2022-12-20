@@ -8,4 +8,3 @@ $chss->SessionCheckLect();
 if (!isset($_SESSION['lect_email']) || $_SESSION['role'] != "1") {
   header("Location:../../includes/logout.php");
 }
-?>

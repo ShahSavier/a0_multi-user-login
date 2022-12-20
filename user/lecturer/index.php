@@ -1,6 +1,6 @@
-<?php include 'settings.php'; //include settings 
-  // echo session_id();
-  //$lectid = $_SESSION["lect_id"];
+<?php include 'settings.php';
+// echo session_id();
+//$lectid = $_SESSION["lect_id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +50,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.php" class="active">Home</a></li>
-          <li class="dropdown"><a href="#" ><span>Project</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Project</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="project-list.php">Project List</a></li>
               <li><a href="project-approval.php">Project Approval</a></li>
@@ -134,82 +134,82 @@
     <section id="recent-blog-posts" class="recent-blog-posts">
       <div class="container" data-aos="fade-up">
 
-      <div class=" section-header">
-        <h2>News</h2>
-        <?php echo lectid; ?>
-      </div>
+        <div class=" section-header">
+          <h2>News</h2>
+          <h2><?php echo $ufunc->LectName(); ?></h2>
+        </div>
 
-      <div class="row gy-5">
+        <div class="row gy-5">
 
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="post-item position-relative h-100">
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="post-item position-relative h-100">
 
-            <div class="post-img position-relative overflow-hidden">
-              <img src="assets/img/header-bg.png" class="img-fluid" alt="">
-              <span class="post-date">October 11</span>
-            </div>
-
-            <div class="post-content d-flex flex-column">
-
-              <h3 class="post-title">Supervisor finding for Students</h3>
-
-              <div class="meta d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-person"></i> <span class="ps-2">Dr Aznoora binti Osman</span>
-                </div>
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/header-bg.png" class="img-fluid" alt="">
+                <span class="post-date">October 11</span>
               </div>
 
-            </div>
-          </div>
-        </div><!-- End post item -->
+              <div class="post-content d-flex flex-column">
 
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="post-item position-relative h-100">
+                <h3 class="post-title">Supervisor finding for Students</h3>
 
-            <div class="post-img position-relative overflow-hidden">
-              <img src="assets/img/header-bg.png" class="img-fluid" alt="">
-              <span class="post-date">October 18</span>
-            </div>
-
-            <div class="post-content d-flex flex-column">
-
-              <h3 class="post-title">Students F3 Form</h3>
-
-              <div class="meta d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-person"></i> <span class="ps-2">Dr Aznoora binti Osman</span>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Dr Aznoora binti Osman</span>
+                  </div>
                 </div>
+
+              </div>
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/header-bg.png" class="img-fluid" alt="">
+                <span class="post-date">October 18</span>
               </div>
 
-              <hr>
-              <a href="" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <div class="post-content d-flex flex-column">
 
-            </div>
-          </div>
-        </div><!-- End post item -->
+                <h3 class="post-title">Students F3 Form</h3>
 
-        <div class="col-xl-4 col-md-6">
-          <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
-
-            <div class="post-img position-relative overflow-hidden">
-              <img src="assets/img/header-bg.png" class="img-fluid" alt="">
-              <span class="post-date">October 25</span>
-            </div>
-
-            <div class="post-content d-flex flex-column">
-
-              <h3 class="post-title">Student proposal submition</h3>
-
-              <div class="meta d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-person"></i> <span class="ps-2">Dr Aznoora binti Osman</span>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Dr Aznoora binti Osman</span>
+                  </div>
                 </div>
+
+                <hr>
+                <a href="" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets/img/header-bg.png" class="img-fluid" alt="">
+                <span class="post-date">October 25</span>
               </div>
 
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Student proposal submition</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Dr Aznoora binti Osman</span>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
-        </div><!-- End post item -->
-      </div>
+          </div><!-- End post item -->
+        </div>
       </div>
     </section>
     <!-- End Recent Blog Posts Section -->

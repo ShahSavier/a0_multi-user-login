@@ -1,11 +1,11 @@
 <?php
- include 'settings.php';
-   //session_start();
+include 'settings.php';
+//session_start();
 
-   $matrixnumber = $_SESSION["matrix_number"];
-   
-   $lectname = $_SESSION["lect_name"];
-   $lect_matrixnum = $_SESSION["lect_matrixnum"];
+$matrixnumber = $_SESSION["matrix_number"];
+
+$lectname = $_SESSION["lect_name"];
+$lect_matrixnum = $_SESSION["lect_matrixnum"];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -19,16 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $lect_matrixnum = mysqli_real_escape_string($conn, $lect_matrixnum);
   $complaint_status = mysqli_real_escape_string($conn, $complaint_status);
 
-				$sql = "INSERT INTO complaint(complaint, matrix_number, complaint_status)VALUES('$complaint', '$lect_matrixnum', '$complaint_status')";
+  $sql = "INSERT INTO complaint(complaint, matrix_number, complaint_status)VALUES('$complaint', '$lect_matrixnum', '$complaint_status')";
 
-				if (mysqli_query($conn, $sql)) {
-					echo '<h1>Thank you!</h1>';
-				} else {
-					echo '<h1>Cannot register</h1>';
-				}
+  if (mysqli_query($conn, $sql)) {
+    echo '<h1>Thank you!</h1>';
+  } else {
+    echo '<h1>Cannot register</h1>';
+  }
 
-        // var_dump($sql);
-	
+  // var_dump($sql);
+
 }
 ?>
 <!DOCTYPE html>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li class="dropdown"><a href="#" ><span>Project</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Project</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="project-list.php">Project List</a></li>
               <li><a href="project-approval.php">Project Approval</a></li>
@@ -130,19 +130,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h3>Call Us</h3>
                 <p>Head of Learning Centre</p>
                 <p>+6049882506</p>
-                
+
               </div>
             </div>
 
           </div>
-          
+
           <div class="col-lg-6">
             <form action="" method="post" enctype="multipart/form-data" class="php-email-form" autocomplete="off">
               <h5>Any Complaint or Inquiry?</h5><br>
               <div class="row gy-4">
                 <div class="col-lg-6 form-group">
                   <label for="sel1">Lecturer Name</label>
-                  <input type="text" name="name" class="form-control" id="name" placeholder="<?php $ufunc->lectname(); //Show name who is in session user?>" disabled>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="<?php $ufunc->lectname(); //Show name who is in session user
+                                                                                              ?>" disabled>
                 </div>
                 <div class="col-lg-6 form-group">
                   <label for="sel1">Lecturer Id</label>

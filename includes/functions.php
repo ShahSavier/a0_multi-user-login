@@ -81,14 +81,13 @@ class Email
       $stmt->execute();
       $stmt->bind_result($username, $password);
       $stmt->store_result();
-      if ($stmt->fetch()) { //fetching the contents of the row 
+      if ($stmt->fetch()) { //fetching the contents of the row
         $_SESSION['lect_email'] = $username; // Initializing Session
-        $_SESSION['lect_num'] = $lectnum;
+        $_SESSION['lect_matrixnum'] = $lectmatrixnum;
         $_SESSION['lect_id'] = $lectid;
       }
       mysqli_close($conn); // Closing Connection
     }
-
   }
   public function SessionVerify()
   {
@@ -135,7 +134,6 @@ class Email
     $_SESSION["lect_id"] = $row["lect_id"];
     $_SESSION["lect_name"] = $row["lect_name"];
     $_SESSION["role"] = $row["role"];
-    $_SESSION["lect_num"] = $row["lect_num"];
     $_SESSION["lect_matrixnum"] = $row["lect_matrixnum"];
   }
 
@@ -155,14 +153,17 @@ class Email
   }
   public function UserType()
   {
-    //if user role is 2, redirect to admin page
-    if ($_SESSION["role"] == 2) {
-      header("Location:../user/admin/");
-    }
+
     //if user role is 1, redirect to lecturer page
     if ($_SESSION["role"] == 1) {
       header("Location:../user/lecturer/");
     }
+
+    //if user role is 2, redirect to admin page
+    if ($_SESSION["role"] == 2) {
+      header("Location:../user/admin/");
+    }
+
     //if user role is 0, redirect to student page
     if ($_SESSION["role"] == 0) {
       header("Location:../user/student/");
@@ -203,10 +204,16 @@ class UserFunctions
     echo $lectname;
   }
 
+  public function LectEmail()
+  {
+    $lectemail = $_SESSION["lect_email"];
+    echo $lectemail;
+  }
+
   public function LectMatrixNum()
   {
-    $lect_matrixnum = $_SESSION["lect_matrixnum"];
-    echo $lect_matrixnum;
+    $lectmatrixnum = $_SESSION["lect_matrixnum"];
+    echo $lectmatrixnum;
   }
 
   public function AdminId()
